@@ -11,7 +11,7 @@ export default function Home() {
                     <title>Início | Dungeon Time</title>
                 </Head>
                <section>
-                    <div>Esse é o bem vindo</div>
+                    <strong>Esse é o bem vindo</strong>
                     <div>
                         <div>Essa é a home page</div>
                         <a href="/timer">Ir para o timer</a>
