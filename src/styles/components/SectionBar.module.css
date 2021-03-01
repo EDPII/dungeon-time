@@ -1,0 +1,35 @@
+.SectionBarContainer {
+    display: flex;
+    background: var(--white);
+    padding: 0  20px;
+    border-radius: 5px;
+    box-shadow: 0 0 60px rgba(0, 0, 0, 0.5);
+    
+}
+
+.SectionBarContainer  {
+    align-items: center;
+    font-size: 1.5rem;
+    
+}
+
+.SectionBarContainer  {
+    justify-content: space-between;
+}
+
+.logoContainer {
+    display: flex;
+}
+
+.SectionBarContainer nav {
+    display: flex;
+    align-items: center;
+    height: 100%
+
+}
+
+.NavContainer ul {
+    display: flex;
+    margin: 1rem;
+    list-style: none;
+}
