@@ -7,12 +7,12 @@
 }
 
 :root {
-    --white: #fff;
+    --white: #282a36;
     --background: #383a59;
     --gray-line: #DCDDE0;
-    --text: #666666;
+    --text: #f8f8f2;
     --text-highlight: #B3B9FF;
-    --title: #2E384D;
+    --title: #f8f8f2;
     --red: #ff5555;
     --green: #50fa7b;
     --blue: #5965E0;

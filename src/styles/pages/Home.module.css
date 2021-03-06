@@ -1,19 +1,94 @@
+.sectionContainer {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+
+    justify-content: flex-end;
+    align-items: center;
+    background-image: linear-gradient( var(--white), transparent, var(--white) );
+}
+
 .container {
-    height: 10vh;
-    max-width: 992px;
-    margin: 0 auto;
+    height: 100vh;
+    width: 100%;
+    max-width: 30rem;
+
     padding: 2.5rem 2rem;
-
-    display:flex;
-    flex-direction: column;
-}
-
-.container section {
+    
+    display: flex;
     flex: 1;
-
-
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 6.25rem;
-    align-content: center;
+    flex-direction: column;
+    
+    align-items: flex-start;
+    justify-content: center;
+    text-align: left;
+    margin-right: 10%;
 }
+
+.container header {
+    font-size: 3rem;
+    font-weight: 600;
+    line-height: 1.4;
+    margin-bottom: .5rem;
+    color: var(--green);
+}
+
+.container p {
+    font-size: 1.25rem;
+    font-weight: 400;
+    line-height: 1.4;
+    margin-bottom: 2rem;
+}
+
+.buttonsContainer button  {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+
+    font-size: 1.5rem;
+    padding: 0.5rem 3rem;
+    margin-top: 1rem;
+
+    border: none;
+    box-shadow: 0 0 60px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+
+}
+
+.buttonsContainer button:hover {
+    filter: brightness(0.8);
+}
+
+.git {
+    background: #171515;
+    color: var(--text);
+}
+
+.gg {
+    background: #db4a39;
+    color: var(--text);
+}
+
+.tt {
+    background: var(--blue-twitter);
+    color: var(--text);
+}
+
+.container footer {
+    margin-top: 3rem;
+}
+
+.buttonsContainer {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+
+
+
+
+
+
+

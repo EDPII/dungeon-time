@@ -1,30 +1,70 @@
 import Head from 'next/head';
-import  React  from 'react';
-import { Login } from '../components/LoginBox';
+import { GetServerSideProps } from 'next'
+import Link from 'next/link';
 
-import styles from '../styles/pages/Home.module.css';
-import { FaGithub } from 'react-icons/fa';
-import { SectionBar } from '../components/SectionBar';
+ 
+import React from 'react';
+import { ChallengeBox } from '../components/ChallengeBox';
+import { CompletedLevels } from '../components/CompletedLevels';
+import { Countdown } from '../components/Countdown';
+import { LevelProgress } from '../components/LevelProgress';
+import { Profile } from '../components/Profile';
 
-export default function Home() {
-    return (
-        <>
-        <header className={styles.sectionBarContainers}>
-            <SectionBar />
-        </header>
-            <div className={styles.container}>
-                <Head>
-                    <title>Início | Dungeon Time</title>
-                </Head>
-               <section>
-                   <div>
-                   
-                   </div>
-                   <div>
-                        <Login />
-                   </div>
-               </section>
-            </div>
-        </>
-    );
+
+
+import styles from '../styles/pages/Timer.module.css';
+
+import { CountdownContext, CountdownProvide } from '../contexts/CountdownContext';
+import { ChallengeProvider } from '../contexts/ChallengeContext';
+
+interface TimePage {
+  level: number;
+  currentLevel: number;
+  challengeCompleted:number;
 }
+
+export default function Time(props:TimePage) {
+    return (
+      <ChallengeProvider
+        level = {props.level}
+        currentLevel = {props.currentLevel}
+        challengeCompleted = {props.challengeCompleted}
+      >
+        <div className={styles.timeContainer}>
+          <Head>
+            <title>Timer | Dungeon Time</title>
+          </Head>
+
+          <LevelProgress />
+
+          <CountdownProvide>
+            <section> 
+              <div>
+                <Profile />
+                <CompletedLevels />     
+                <Countdown />  
+              </div>
+              <div>
+                <ChallengeBox />
+              </div>
+            </section>
+          </CountdownProvide>
+    </div>
+    </ChallengeProvider>
+    )
+}  
+
+export const getServerSideProps: GetServerSideProps = async (ctx) => {
+  
+  const {level, currentLevel, challengeCompleted} = ctx.req.cookies;
+
+
+  return {
+    props: {
+      level: Number(level),
+      currentLevel: Number(currentLevel),
+      challengeCompleted: Number(challengeCompleted)
+    }
+  }
+}
+
