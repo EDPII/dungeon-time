@@ -50,7 +50,7 @@ const Login: React.FC<AppProps> = ({ ...pageProps }) => {
                         <FaGoogle /> Conectar com o Google
                         </button>
                         <button className={styles.auth} type="button" 
-                        onClick={() => signIn('auth0')}>
+                        onClick={() => signIn('twitter')}>
                         <FaTwitter /> Conectar com o Twitter
                         </button>
                     </div>    
