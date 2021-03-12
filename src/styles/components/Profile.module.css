@@ -1,6 +1,8 @@
 .profileContainer {
     display: flex;
     align-items: center;
+    
+
 }
 
 .profileContainer > img {
@@ -27,4 +29,20 @@
 
 .profileContainer div p img {
     margin-right: 0.5rem;
+}
+
+.profileContainer div:last-child {
+    display: flex;  
+    margin-left: 8rem;
+}
+
+.signOutContainer {
+    display: flex;
+    cursor: pointer;
+   
+
+}
+
+.signOutContainer:hover {
+    filter: brightness(0.8);
 }

@@ -2,18 +2,29 @@ import  Head from 'next/head';
 import { AppProps } from 'next/dist/next-server/lib/router/router';
 import { useRouter } from 'next/router';
 import  React, { useEffect }  from 'react';
-import { signIn, useSession } from 'next-auth/client';
+
+import Link from 'next/link';
+import { signIn, signOut, useSession } from 'next-auth/client';
 
 
 import styles from '../styles/pages/Home.module.css';
-import { FaGithub, FaGoogle, FaTwitter } from 'react-icons/fa';
+import { FaDungeon, FaPlay, FaGithub, FaGoogle, FaTwitter } from 'react-icons/fa';
 
 
 
 
-export default function Home() {
-
-  
+const Login: React.FC<AppProps> = ({ ...pageProps }) => {
+    const userSession = pageProps.session;
+    const [loading] = useSession();
+    const router = useRouter();
+    useEffect(() => {
+        if (!(pageProps.session || loading)) {
+        router.push('/login')
+        } else {
+        router.push('/')
+        }
+  }, [userSession, loading])
+   
     return (
         <>
             <Head>
@@ -38,8 +49,8 @@ export default function Home() {
                         onClick={() => signIn('google')}>
                         <FaGoogle /> Conectar com o Google
                         </button>
-                        <button className={styles.tt} type="button" 
-                        onClick={() => signIn('twitter')}>
+                        <button className={styles.auth} type="button" 
+                        onClick={() => signIn('auth0')}>
                         <FaTwitter /> Conectar com o Twitter
                         </button>
                     </div>    
@@ -60,3 +71,4 @@ export default function Home() {
     
 }
 
+export default Login;

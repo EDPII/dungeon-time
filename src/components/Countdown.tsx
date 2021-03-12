@@ -1,6 +1,7 @@
 import styles from '../styles/components/Countdown.module.css';
 import { useContext } from 'react';
 import { CountdownContext } from '../contexts/CountdownContext';
+import { FaPlay } from 'react-icons/fa';
 
 
 export function Countdown() {
@@ -59,6 +60,7 @@ export function Countdown() {
                     onClick={startCountdown}
                     >
                         Iniciar um Ciclo
+                        <FaPlay />
                     </button>
                 )}
                     </>

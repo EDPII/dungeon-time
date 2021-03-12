@@ -1,9 +1,7 @@
 import Head from 'next/head';
 import { GetServerSideProps } from 'next'
-import Link from 'next/link';
-
  
-import React from 'react';
+import React, { useEffect  } from 'react';
 import { ChallengeBox } from '../components/ChallengeBox';
 import { CompletedLevels } from '../components/CompletedLevels';
 import { Countdown } from '../components/Countdown';
@@ -16,6 +14,8 @@ import styles from '../styles/pages/Timer.module.css';
 
 import { CountdownContext, CountdownProvide } from '../contexts/CountdownContext';
 import { ChallengeProvider } from '../contexts/ChallengeContext';
+import { useSession, signOut } from 'next-auth/client';
+import { useRouter } from 'next/router';
 
 interface TimePage {
   level: number;
@@ -23,7 +23,28 @@ interface TimePage {
   challengeCompleted:number;
 }
 
+
 export default function Time(props:TimePage) {
+
+  const [session, loading] = useSession()
+  const router = useRouter()
+
+  useEffect(() => {
+    if (!(session || loading)) {
+      router.push('/login')
+    } else {
+      router.push('/')
+    }
+  }, [session, loading]);
+
+  if (typeof window !== 'undefined' && loading) {
+    return (
+      <div className="loading">
+        Carregando. . .
+      </div>
+    )
+  }
+
     return (
       <ChallengeProvider
         level = {props.level}
@@ -36,6 +57,7 @@ export default function Time(props:TimePage) {
           </Head>
 
           <LevelProgress />
+         
 
           <CountdownProvide>
             <section> 
