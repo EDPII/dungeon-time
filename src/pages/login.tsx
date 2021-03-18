@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 import  React, { useEffect }  from 'react';
 
 import Link from 'next/link';
-import { signIn, signOut, useSession } from 'next-auth/client';
+import { signIn, useSession } from 'next-auth/client';
 
 
 import styles from '../styles/pages/Home.module.css';
@@ -49,7 +49,7 @@ const Login: React.FC<AppProps> = ({ ...pageProps }) => {
                         onClick={() => signIn('google')}>
                         <FaGoogle /> Conectar com o Google
                         </button>
-                        <button className={styles.auth} type="button" 
+                        <button className={styles.tt} type="button" 
                         onClick={() => signIn('twitter')}>
                         <FaTwitter /> Conectar com o Twitter
                         </button>

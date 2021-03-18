@@ -70,8 +70,8 @@
     color: var(--text);
 }
 
-.auth {
-    background: var(--blue);
+.tt {
+    background: #00acee;
     color: var(--text);
 }
 

@@ -14,7 +14,7 @@ import styles from '../styles/pages/Timer.module.css';
 
 import { CountdownContext, CountdownProvide } from '../contexts/CountdownContext';
 import { ChallengeProvider } from '../contexts/ChallengeContext';
-import { useSession, signOut } from 'next-auth/client';
+import { useSession } from 'next-auth/client';
 import { useRouter } from 'next/router';
 
 interface TimePage {

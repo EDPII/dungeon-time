@@ -5,11 +5,10 @@ import { signOut, useSession } from 'next-auth/client';
 import { FaSignOutAlt } from 'react-icons/fa'
  
 
-
 export function Profile(props): JSX.Element {
     
     const { level } = useContext(ChallengeContext);
-    const session = useSession();
+
     
 
     return (
