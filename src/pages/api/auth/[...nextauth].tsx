@@ -23,6 +23,6 @@ NextAuth(req, res, {
     // ...add more providers here
   ],
   // Mongo database
-	database: process.env.DATABASE_URL,
+	//database: process.env.DATABASE_URL,
   
 })
