@@ -3,9 +3,22 @@
     height: 100vh;
     width: 100vw;
 
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: center;
     background-image: linear-gradient( var(--white), transparent, var(--white) );
+}
+
+.sectionContainer img {
+    height: 45rem;
+    width: 45rem;
+
+    margin-left: 8rem;
+}
+
+@media (max-width: 720px) {
+    .sectionContainer img {
+        display: none;
+    }
 }
 
 .container {
