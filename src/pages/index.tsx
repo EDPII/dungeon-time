@@ -19,9 +19,9 @@ const Login: React.FC<AppProps> = ({ ...pageProps }) => {
     const router = useRouter();
     useEffect(() => {
         if (!(pageProps.session || loading)) {
-        router.push('/')
+        router.replace('/')
         } else {
-        router.push('/timer')
+        router.replace('/timer')
         }
   }, [userSession, loading])
    

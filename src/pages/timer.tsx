@@ -31,9 +31,9 @@ export default function Time(props:TimePage) {
 
   useEffect(() => {
     if (!(session || loading)) {
-      router.push('/')
+      router.replace('/')
     } else {
-      router.push('/timer')
+      router.replace('/timer')
     }
   }, [session, loading]);
 

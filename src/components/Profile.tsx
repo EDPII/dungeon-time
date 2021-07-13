@@ -8,14 +8,12 @@ import { FaSignOutAlt } from 'react-icons/fa'
 export function Profile(props): JSX.Element {
     
     const { level } = useContext(ChallengeContext);
-
-    
-
+    const [session, loading] = useSession();
     return (
         <div className={styles.profileContainer}>
-            <img src="https://github.com/edpii.png" alt="Eduardo" />
+            <img src={`${session.user.image}`} alt={`${session.user.name}`} />
             <div>
-                <strong>Eduardo</strong>
+                <strong>{session.user.name}</strong>
                 <p>
                     <img src="icons/level.svg" alt="Level" />
                     Level {level}
