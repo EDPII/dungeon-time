@@ -22,7 +22,9 @@ export function Profile(props): JSX.Element {
             <div>
                 <div className={styles.signOutContainer}>
                     <a type="button" 
-                    onClick={() => signOut()}>
+                    onClick={() => signOut({
+                        callbackUrl: "/"
+                    })}>
                             <FaSignOutAlt size="2rem" color="white"/>
                     </a>
                 </div>
