@@ -19,9 +19,9 @@ const Login: React.FC<AppProps> = ({ ...pageProps }) => {
     const router = useRouter();
     useEffect(() => {
         if (!(pageProps.session || loading)) {
-        router.replace('/')
+        router.push('/')
         } else {
-        router.replace('/timer')
+        router.push('/timer')
         }
   }, [userSession, loading])
    
@@ -33,9 +33,7 @@ const Login: React.FC<AppProps> = ({ ...pageProps }) => {
             
 
             <section className={styles.sectionContainer}>
-                <div>
-                    <img src="icons/wood-door.png" alt="wood-door"></img>
-                </div>
+
                 <div className={styles.container}>
                     <header>Bem-Vindo</header>
                     <main>

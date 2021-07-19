@@ -3,9 +3,12 @@
     height: 100vh;
     width: 100vw;
 
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
-    background-image: linear-gradient( var(--white), transparent, var(--white) );
+
+    background: url('/background.jpg');
+    background-size: cover;
+    background-position: right;
 }
 
 .sectionContainer img {
@@ -22,29 +25,42 @@
 }
 
 .container {
-    height: 100vh;
-    width: 100%;
-    max-width: 30rem;
-
-    padding: 2.5rem 2rem;
-    
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-    
-    align-items: flex-start;
-    justify-content: center;
-    text-align: left;
-    margin-right: 10%;
-}
+    margin: 1rem;
+    margin-right: 7rem;
+    padding: 1rem;
+    width: 25rem;
+  
+  
+    border-radius: 10px;  
+  
+    background-color: #f8f8f8;
+    box-shadow: 0 0 60px rgba(0, 0, 0, 0.5);
+  
+    font-size: 1.25rem;
+    color: black;
+    flex-direction: row;
+}  
 
 .container header {
     font-size: 4rem;
     font-weight: 600;
     line-height: 1.4;
-    margin-bottom: .5rem;
+    margin-bottom: 2rem;
     color: var(--green);
 }
+
+@media (max-width: 1024px) {
+    .sectionContainer{
+      background-image: linear-gradient(#a4508b, #5f0a87);
+    }
+  
+    .sectionContainer {
+      justify-content: center;
+    }
+    .divContainer {
+      margin: 1rem;
+    }
+  }
 
 .container p {
     font-size: 1.25rem;
@@ -59,14 +75,14 @@
     align-items: center;
     gap: 1rem;
 
+    width: 100%;
     font-size: 1.5rem;
-    padding: 0.5rem 3rem;
-    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    margin-bottom: 1rem;
 
     border: none;
     box-shadow: 0 0 60px rgba(0, 0, 0, 0.5);
     border-radius: 5px;
-
 }
 
 .buttonsContainer button:hover {
@@ -91,9 +107,5 @@
 
 .container footer {
     margin-top: 3rem;
-}
-
-.buttonsContainer {
-    display: flex;
-    flex-direction: column;
+    text-align: justify;
 }
